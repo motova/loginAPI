@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title>Consultar GET</ion-title>
+
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content #popoverContent padding class="popover-page">
+  <div #popoverText class="text-to-change">
+      
+      <div padding>
+        <button ion-button color="primary" (click)="buscar()" block>Buscar Dados</button>
+      </div>
+    <div>
+      <ion-item *ngFor="let item of dados;">
+        <h3>{{item.nome}} - {{item.razaoSocial}}</h3>
+        <p>ID: {{item.id}}</p>
+        <p>CEP: {{item.cep}}</p>
+        <p>CNPJ:{{item.cnpj}} </p>
+      </ion-item>
+
+    </div>
+  </div>
 </ion-content>
